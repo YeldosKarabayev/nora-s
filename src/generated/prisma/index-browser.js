@@ -130,6 +130,46 @@ exports.Prisma.UserScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.UserProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  university: 'university',
+  faculty: 'faculty',
+  major: 'major',
+  graduationYear: 'graduationYear',
+  personalityType: 'personalityType',
+  temperament: 'temperament',
+  opennessLevel: 'opennessLevel',
+  religiousViews: 'religiousViews',
+  politicalViews: 'politicalViews',
+  tidinessLevel: 'tidinessLevel',
+  alcoholAttitude: 'alcoholAttitude',
+  smokingAttitude: 'smokingAttitude',
+  accommodationType: 'accommodationType',
+  primaryGoal: 'primaryGoal',
+  roommateExpectations: 'roommateExpectations',
+  hobbies: 'hobbies',
+  favoriteMusic: 'favoriteMusic',
+  favoriteMovies: 'favoriteMovies',
+  readingPreferences: 'readingPreferences',
+  boardGames: 'boardGames',
+  travelInterest: 'travelInterest',
+  artInterest: 'artInterest',
+  physicalActivity: 'physicalActivity',
+  favoriteSports: 'favoriteSports',
+  gymRegularly: 'gymRegularly',
+  isEarlyBird: 'isEarlyBird',
+  scheduleType: 'scheduleType',
+  staysHomeOften: 'staysHomeOften',
+  hasPets: 'hasPets',
+  petAttitude: 'petAttitude',
+  cooksAtHome: 'cooksAtHome',
+  sharesDuties: 'sharesDuties',
+  usesHomeAppliances: 'usesHomeAppliances',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -139,13 +179,43 @@ exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
 exports.Role = exports.$Enums.Role = {
   USER: 'USER',
   ADMIN: 'ADMIN'
 };
 
+exports.PersonalityType = exports.$Enums.PersonalityType = {
+  INTROVERT: 'INTROVERT',
+  EXTROVERT: 'EXTROVERT',
+  AMBIVERT: 'AMBIVERT'
+};
+
+exports.Temperament = exports.$Enums.Temperament = {
+  SANGUINE: 'SANGUINE',
+  CHOLERIC: 'CHOLERIC',
+  PHLEGMATIC: 'PHLEGMATIC',
+  MELANCHOLIC: 'MELANCHOLIC'
+};
+
+exports.Attitude = exports.$Enums.Attitude = {
+  POSITIVE: 'POSITIVE',
+  NEGATIVE: 'NEGATIVE',
+  NEUTRAL: 'NEUTRAL'
+};
+
+exports.AccommodationType = exports.$Enums.AccommodationType = {
+  SHORT_TERM: 'SHORT_TERM',
+  LONG_TERM: 'LONG_TERM'
+};
+
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  UserProfile: 'UserProfile'
 };
 
 /**

@@ -23,8 +23,94 @@ model User {
   role      Role     @default(USER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  UserProfile UserProfile[]
 }
 enum Role {
   USER
   ADMIN
+}
+
+model UserProfile {
+  id                 String   @id @default(cuid())
+  userId             String   @unique
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Education
+  university         String?
+  faculty            String?
+  major              String?
+  graduationYear     Int?
+
+  // Personality
+  personalityType    PersonalityType?
+  temperament        Temperament?
+  opennessLevel      Int?     // 1-10
+
+  // Worldview
+  religiousViews     String?
+  politicalViews     String?
+  tidinessLevel      Int?     // 1-10
+  alcoholAttitude    Attitude?
+  smokingAttitude    Attitude?
+
+  // Goals
+  accommodationType  AccommodationType?
+  primaryGoal        String?  // e.g., study, work
+  roommateExpectations String?
+
+  // Interests
+  hobbies            String[]
+  favoriteMusic      String?
+  favoriteMovies     String?
+  readingPreferences String?
+  boardGames         Boolean?
+  travelInterest     Boolean?
+  artInterest        Boolean?
+
+  // Sport & Activity
+  physicalActivity   Int?     // 1-10
+  favoriteSports     String?
+  gymRegularly       Boolean?
+
+  // Daily Routine
+  isEarlyBird        Boolean?
+  scheduleType       String?  // e.g., fixed, flexible
+  staysHomeOften     Boolean?
+
+  // Pets
+  hasPets            Boolean?
+  petAttitude        String?
+
+  // Household
+  cooksAtHome        Boolean?
+  sharesDuties       Boolean?
+  usesHomeAppliances Boolean?
+
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+enum PersonalityType {
+  INTROVERT
+  EXTROVERT
+  AMBIVERT
+}
+
+enum Temperament {
+  SANGUINE
+  CHOLERIC
+  PHLEGMATIC
+  MELANCHOLIC
+}
+
+enum Attitude {
+  POSITIVE
+  NEGATIVE
+  NEUTRAL
+}
+
+enum AccommodationType {
+  SHORT_TERM
+  LONG_TERM
 }
