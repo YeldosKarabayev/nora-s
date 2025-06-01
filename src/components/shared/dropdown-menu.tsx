@@ -59,7 +59,7 @@ export default function DropdownMenu() {
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                 <h2 className="text-md font-semibold text-gray-700 mb-4">Войдите или зарегистрируйтесь</h2>
                 <div className="border-t-2 border-gray-200" />
-                <LoginForm />
+                <LoginForm onClose={() => setIsModalOpen(false)} />
                 <div className="grid space-x-2">
                     <span className="text-xs text-gray-500 mt-2">
                         Нажимая "Продолжить", вы соглашаетесь с нашими <a href="#" className="text-blue-500 hover:underline">Условиями использования</a> и <a href="#" className="text-blue-500 hover:underline">Политикой конфиденциальности</a>.
@@ -67,7 +67,7 @@ export default function DropdownMenu() {
 
                     <span className="text-xs text-gray-500 mt-2">ИЛИ</span>
                 </div>
-                <LoginForm />
+                {/* <LoginForm onClose={() => setIsModalOpen(false)} /> */}
             </Modal>
         </>
 
