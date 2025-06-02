@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'Nora Housing',
+  title: 'Nora Housing | Платформа аренды жилья и поиска соседей',
   description: 'Платформа аренды жилья и поиска соседей',
 };
 
