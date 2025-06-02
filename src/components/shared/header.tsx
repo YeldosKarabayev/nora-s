@@ -37,7 +37,7 @@ export default function Header() {
           <MainNav />
           
           <div className="flex items-center">
-            {isAuthenticated === false ? <UserMenu /> : <DropdownMenu />}
+            {isAuthenticated  ? <UserMenu /> : <DropdownMenu />}
           </div>
         </div>
       </div>

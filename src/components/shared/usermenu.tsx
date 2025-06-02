@@ -1,11 +1,16 @@
 'use client'
 
 import { LogOut } from 'lucide-react';
+import { useAuth } from '../../app/contexts/authcontext';
+import { useRouter } from 'next/navigation';
 
 export default function UserMenu() {
+  const { logout } = useAuth();
+  const router = useRouter();
+
   const handleLogout = () => {
-    localStorage.removeItem("user");
-    window.location.href = "/"; 
+    logout();                     // Обновит isAuthenticated в контексте
+    router.push('/');             // Перенаправит на главную
   };
 
   return (
