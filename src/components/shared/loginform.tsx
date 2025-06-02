@@ -4,6 +4,8 @@
 import { useRouter } from "next/navigation";
 import { Input } from "../ui/input";
 import { useState } from "react";
+import { useAuth } from "../../app/contexts/authcontext";
+
 
 
 export default function LoginForm({ onClose }: { onClose: () => void }) {
@@ -11,6 +13,8 @@ export default function LoginForm({ onClose }: { onClose: () => void }) {
     const router = useRouter();
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
+    const { login: setAuthenticated } = useAuth();
+
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -39,6 +43,7 @@ export default function LoginForm({ onClose }: { onClose: () => void }) {
                     onClose();
                     router.push("/pages/roommates");
                     localStorage.setItem("token", data.token);
+                    setAuthenticated();  
                 } else {
                     setError(data.error || "Ошибка входа. Пожалуйста, проверьте свои учетные данные.");
                 }
