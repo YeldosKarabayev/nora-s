@@ -41,7 +41,7 @@ export default function LoginForm({ onClose }: { onClose: () => void }) {
 
                 if (res.ok) {
                     onClose();
-                    router.push("/pages/roommates");
+                    router.push("/roommates");
                     localStorage.setItem("token", data.token);
                     setAuthenticated();  
                 } else {

@@ -11,8 +11,7 @@ interface UserAvatarProps {
 
 const getRandColor = (name: String) => {
     const colors = [
-        "bg-red-500", "bg-green-500", "bg-blue-500", "bg-yellow-500",
-        "bg-purple-500", "bg-pink-500", "bg-indigo-500", "bg-teal-500"
+        "bg-gray-800"
     ];
     const hash = name.split("").reduce((acc, char) => char.charCodeAt(0) + acc, 0);
     return colors[hash % colors.length];
@@ -58,7 +57,7 @@ export default function CustomAvatar({ username, userRole }: UserAvatarProps) {
     return (
         <div className="relative" ref={menuRef}>
             <button
-                className={`flex items-center justify-center w-9 h-9 ${bgColor} text-white rounded-full`}
+                className={`flex items-center justify-center w-12 h-12 ${bgColor} text-white font-semibold text-xl rounded-full`}
                 onClick={() => setIsOpened(!isOpened)}
             >
                 {initials}
@@ -66,7 +65,7 @@ export default function CustomAvatar({ username, userRole }: UserAvatarProps) {
 
             {isOpened && (
                 <div className="absolute right-[10%] mt-2 min-w-max bg-white border border-gray-300 rounded-lg shadow-lg z-50">
-                    <ul className="py-2">
+                    {/* <ul className="py-2">
                         {userRole === "admin" && (
                             <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => router.push("/dashboard")}>
                                 <ChartBarIcon size={20} className="mr-2" />
@@ -84,7 +83,7 @@ export default function CustomAvatar({ username, userRole }: UserAvatarProps) {
                             <LogOut size={20} className="mr-2" />
                             Выйти
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
             )}
         </div>

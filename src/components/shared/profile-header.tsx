@@ -2,12 +2,13 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import logo from '../../components/images/nora-logo2.png';
+import logo from '../../components/images/logo-not.png';
 import { Menu } from 'lucide-react';
 import MainNav from './main-nav';
 import DropdownMenu from './dropdown-menu';
 import UserMenu from "./usermenu"; 
 import { useAuth } from '../../app/contexts/authcontext';
+import Link from 'next/link';
 
 
 
@@ -25,6 +26,7 @@ export default function Header() {
         <div className="flex justify-between">
           <div className="flex justify-between items-center">
             <div className="flex">
+            <Link href="/main">
               <Image
                 src={logo}
                 alt="Logo"
@@ -32,12 +34,11 @@ export default function Header() {
                 height={80}
                 className='cursor-pointer'
               />
+            </Link>
             </div>
           </div>
-          <MainNav />
-          
           <div className="flex items-center">
-            {isAuthenticated  ? <UserMenu /> : <DropdownMenu />}
+            <UserMenu /> 
           </div>
         </div>
       </div>
